@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record model="ir.actions.act_window" id="instituto.profesor_action_window">
+      <field name="name">Name Action Profesores</field>
+      <field name="res_model">instituto.profesor</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="List Profesores" id="instituto.profesores" parent="instituto.personas_menu" action="instituto.profesor_action_window"/>
+
+    <!-- Vista Arbol --> 
+    <record model="ir.ui.view" id="instituto.profesor_tree">
+      <field name="name">Lista de Profesores</field>
+      <field name="model">instituto.profesor</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nombre"/>
+          <field name="apellidos"/>
+          <field name="dni"/>
+          <field name="modulos"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Vista Formulario -->
+    <record model="ir.ui.view" id="instituto.profesor_form">
+      <field name="name">Profesor</field>
+      <field name="model">instituto.profesor</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+          <field name="nombre"/>
+          <field name="apellidos"/>
+          <field name="dni"/>
+          <field name="modulos"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+  </data>
+</odoo>

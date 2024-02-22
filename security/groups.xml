@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="grupo_director" model="res.groups">
+        <field name="name">Director</field>
+        <field name="users" eval="[(4, ref('base.user_admin'))]" />
+    </record>
+
+    <record id="grupo_profesor" model="res.groups">
+        <field name="name">Profesor</field>
+        
+    </record>
+</odoo>

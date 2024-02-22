@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record model="ir.actions.act_window" id="instituto.alumno_action_window">
+      <field name="name">Name Action Alumnos</field>
+      <field name="res_model">instituto.alumno</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Menu Personas" id="instituto.personas_menu" parent="instituto.menu_root"/>
+    <menuitem name="List Alumnos" id="instituto.alumnos" parent="instituto.personas_menu" action="instituto.alumno_action_window"/>
+
+    <!-- Vista Arbol --> 
+    <record model="ir.ui.view" id="instituto.alumno_tree">
+      <field name="name">Lista de Alumnos</field>
+      <field name="model">instituto.alumno</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nombre"/>
+          <field name="apellidos"/>
+          <field name="dni"/>
+          <field name="modulos"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Vista Formulario -->
+    <record model="ir.ui.view" id="instituto.alumno_form">
+      <field name="name">Alumno</field>
+      <field name="model">instituto.alumno</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+          <field name="nombre"/>
+          <field name="apellidos"/>
+          <field name="dni"/>
+          <field name="modulos"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+  </data>
+</odoo>

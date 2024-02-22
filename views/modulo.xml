@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record model="ir.actions.act_window" id="instituto.modulo_action_window">
+      <field name="name">Name Action Modulos</field>
+      <field name="res_model">instituto.modulo</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="List Modulos" id="instituto.modulos" parent="instituto.estudios_menu" action="instituto.modulo_action_window"/>
+
+    <!-- Vista Arbol --> 
+    <record model="ir.ui.view" id="instituto.modulo_tree">
+      <field name="name">Lista de Modulos</field>
+      <field name="model">instituto.modulo</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nombre"/>
+          <field name="alumnos" />
+          <field name="ciclo" />
+          <field name="profesor" />
+        </tree>
+      </field>
+    </record>
+
+    <!-- Vista Formulario -->
+    <record model="ir.ui.view" id="instituto.modulo_form">
+      <field name="name">Modulo</field>
+      <field name="model">instituto.modulo</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+              <field name="nombre"/>
+              <field name="alumnos" />
+              <field name="ciclo" />
+              <field name="profesor" />
+          </group>
+        </form>
+      </field>
+    </record>
+
+  </data>
+</odoo>
