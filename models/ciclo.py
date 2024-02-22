@@ -9,5 +9,5 @@ class ciclo(models.Model):
     _rec_name="nombre"
 
     nombre = fields.Char()
-    #Añadido de los diagnosticos
+    #Relacion uno a muchos con modulo
     modulos = fields.One2many('instituto.modulo','ciclo')
