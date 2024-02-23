@@ -10,9 +10,13 @@ class alumnos(models.Model):
 
     nombre = fields.Char()
     apellidos = fields.Char()
-    dni = fields.Char(String="DNI")
+    dni = fields.Char(string="DNI")
     #Relacion muchos a muchos con modulo
     modulos = fields.Many2many('instituto.modulo')
+
+
+    primerProfesor = fields.Many2one("instituto.profesor", related='modulos.profesor', string="Primer profesor", readonly=True)
+    modulosProfe = fields.One2many('instituto.modulo',related='primerProfesor.modulos', string="Modulos 1er Profesor", readonly=True)
 
     #Campo computado de nombre y apellido
     nombre_completo = fields.Char(compute='_compute_nombre_completo',store=True)

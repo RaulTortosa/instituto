@@ -37,6 +37,10 @@
           <field name="dni"/>
           <field name="modulos"/>
           </group>
+          <group>
+          <field name="primerProfesor"/>
+          <field name="modulosProfe"/>
+          </group>
         </form>
       </field>
     </record>

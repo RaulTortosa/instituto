@@ -10,7 +10,7 @@ class profesor(models.Model):
 
     nombre = fields.Char()
     apellidos = fields.Char()
-    dni = fields.Char(String="DNI")
+    dni = fields.Char(string="DNI")
     #Relacion uno a muchos con modulo
     modulos = fields.One2many('instituto.modulo','profesor')
 
